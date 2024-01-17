@@ -14,12 +14,12 @@
     </style>
 </head>
 <body class="bg-gray-900 text-white">
-    <div class="container max-w-6xl mx-auto p-8">
+    <div class="container max-w-6xl md:max-w-8xl mx-auto p-8">
         <div class="flex flex-col md:flex-row justify-center items-center md:items-center">
             <div class="md:w-2/3">
-				<div class="flex md:space-x-2 items-center mb-4"> <!-- use h-screen for scroll effect -->
-                <h1 class="text-6xl font-bold italic md:mr-1">NAME.ZIP</h1>
-				<span class="text-white-500 bg-red-500 p-1 font-bold uppercase text-sm md:text-4xl rounded-sm self-center">For Sale!</span>
+				<div class="flex md:space-x-2 items-center mb-2"> <!-- use h-screen for scroll effect -->
+                <h1 class="text-6xl font-bold italic md:mr-1 md:text-7xl">NAME.ZIP</h1>
+				<span class="text-white-500 bg-red-500 p-1 font-bold uppercase text-sm md:text-3xl rounded-sm self-center">For Sale!</span>
 			</div>
                 <h2 class="text-2xl text-green-400 mb-6">Estimated value <span class="font-bold">$650</span></h2>
                 <p class="mb-8">Claim Your Corner of the Web and Kick Start Your Brand: This premium domain is your gateway to standout online presence and brand recognition. Don't miss the chance to make it yours and elevate your digital identity!</p>
@@ -46,7 +46,7 @@
                 <div class="bg-gray-700 p-6 rounded-lg">
                     <h3 class="text-xl font-bold mb-4">Make An Offer</h3>
                     <p class="mb-2">Enter details and offer price</p>
-                    <form action="#" method="POST">
+                    <form id="offerform" action="#" method="POST">
                         <div class="mb-4 text-sm">
                             <input type="text" name="name" class="w-full p-3 rounded bg-gray-800 text-white mb-3" placeholder="Name">
                             <input type="email" name="email" class="w-full p-3 rounded bg-gray-800 text-white mb-3" placeholder="Email">
@@ -62,5 +62,30 @@
             <p>&copy; 2024 MyDomain.com. All Rights Reserved.</p>
         </footer>
     </div>
+
+    <script>
+        document.getElementById('offerform').addEventListener('submit', function(e) {
+            e.preventDefault();
+        
+            var formData = {
+                name: e.target.elements.name.value,
+                email: e.target.elements.email.value,
+                offer: e.target.elements.offer.value
+            };
+        
+            fetch('https://script.google.com/macros/s/AKfycbyKERKn0SL962PR5n8n3C44wqX3L6QnhUYOvfBTzdAQOTQks-7jIUcBkGWDo8rgoap2Qg/exec', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => console.log('Success:', data))
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
 </body>
 </html>
