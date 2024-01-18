@@ -77,14 +77,20 @@
 		
 		<script type="text/javascript">
 			document.addEventListener('DOMContentLoaded', (event) => {
-			    var domainName = window.location.hostname;
+			    let domainName = window.location.hostname;
+				let domainNameHeader = domainName;
 				
 				if (domainName.startsWith('www.')) {
 					domainName = domainName.substring(4);
 				}
 			    document.getElementById('domain-name').textContent = domainName;
 			    document.getElementById('domain-name-input').value = domainName;
-				document.getElementsByClassName('domain-name')[0].textContent = domainName;
+
+				if (domainNameHeader.endsWith('github.io')) {
+					domainNameHeader = domainNameHeader.replace(/\.github\.io$/, "");
+				}
+
+				document.getElementsByClassName('domain-name')[0].textContent = domainNameHeader;
 			});
 		</script>
 	</body>
