@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Sale</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="container max-w-6xl mx-auto p-8 flex flex-col h-screen justify-center">
+        <div class="flex flex-col md:flex-row justify-center items-center md:items-center">
+            <div class="md:w-2/3">
+				<div class="flex md:space-x-2 items-center"> <!-- use h-screen for scroll effect -->
+                <h1 class="text-6xl font-bold italic md:text-8xl md:mr-1">NAME.ZIP</h1>
+				<span class="text-white-500 bg-red-500 p-1 font-bold uppercase text-sm md:text-4xl rounded-sm self-center">For Sale!</span>
+			</div>
+                <h2 class="text-2xl text-green-400 mb-6">Estimated value <span class="font-bold">$8,300</span></h2>
+                <p class="mb-8">Claim Your Corner of the Web and Kick Start Your Brand: This premium domain is your gateway to standout online presence and brand recognition. Don't miss the chance to make it yours and elevate your digital identity!</p>
+                <div class="flex justify-start space-between items-center space-x-16 mb-6">
+                    <div>
+                        <h4 class="font-bold text-xl bg-pink-800 p-1">1250</h4>
+                        <p class="w-1/3">Rank</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl bg-purple-800 p-1">30+</h4>
+                        <p class="w-1/3">Offers</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl bg-blue-800 p-1">125K</h4>
+                        <p class="w-1/3">Views</p>
+                    </div>
+                </div>
+                <div class="flex justify-start space-between items-center space-x-10 text-sm">
+                    <span>info@mydomain.com</span>
+                    <span class="text-blue-500">Domain Listings</span>
+                </div>
+            </div>
+            <div class="md:w-1/3 mt-10 md:mt-0">
+                <div class="bg-gray-700 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Make An Offer</h3>
+                    <p class="mb-2">Enter details and offer price</p>
+					
+                    <form action="https://formspree.io/f/mdoqkyel" method="post" accept-charset="utf-8">
+                        <div class="mb-4 text-sm">
+                            <input type="text" id="name" name="name" class="w-full p-3 rounded bg-gray-800 text-white mb-3" placeholder="Name">
+                            <input type="email" id="email" name="email" class="w-full p-3 rounded bg-gray-800 text-white mb-3" placeholder="email@domain.com">
+                            <input type="text" id="offer" name="offer" class="w-full p-3 rounded bg-gray-800 text-white mb-3" placeholder="$5,000">
+                        </div>
+                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded">Send My Offer</button>
+                    </form>
+			
+				
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center text-xs mt-12">
+            <p>&copy; 2024 Snack Attack. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
