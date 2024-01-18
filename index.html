@@ -21,8 +21,8 @@
 				<div class="md:w-2/3 md:pr-8">
 					<div class="flex md:space-x-2 items-center flex-row">
 						<!-- use h-screen for scroll effect -->
-						<h1 class="text-5xl font-bold italic md:text-6xl lg:text-8xl mr-2 md:mr-1">NAME.ZIP</h1>
-						<span class="text-white-500 bg-red-500 p-1/2 md:p-1 font-bold uppercase text-3xl md:text-3xl lg:text-4xl rounded-sm self-center text-center sm:w-full">For Sale!</span>
+						<h1 id="domain-name-header" class="domain-name text-5xl font-bold italic md:text-6xl lg:text-8xl mr-2 md:mr-1">NAME.ZIP</h1>
+						<span class="text-white-500 bg-red-500 p-1 md:p-1 font-bold uppercase text-3xl md:text-3xl lg:text-6xl rounded-sm self-center text-center sm:w-full">For Sale!</span>
 					</div>
 					<h2 class="text-xl text-green-400 mb-6">Estimated value <span class="font-bold">$8,300</span></h2>
 					<!--
@@ -84,6 +84,7 @@
 				}
 			    document.getElementById('domain-name').textContent = domainName;
 			    document.getElementById('domain-name-input').value = domainName;
+				document.getElementsByClassName('domain-name')[0].textContent = domainName;
 			});
 		</script>
 	</body>
