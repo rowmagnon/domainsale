@@ -111,28 +111,6 @@
 
 			document.getElementsByClassName('domain-name')[0].textContent = domainNameHeader;
 		});
-
-		// Dynamically adjust the font size of the domain name header
-		
-		const domainNameHeader = document.getElementById("domain-name-header");
-
-		function adjustFontSize() {
-			const content = domainNameHeader.textContent.trim();
-			const contentLength = content.length;
-
-			if (contentLength <= 8) {
-				domainNameHeader.style.fontSize = ""; // Reset font size to default
-			} else {
-				// Calculate a dynamic font size based on content length
-				const fontSize = 5 - Math.min((contentLength - 8) / 3, 2);
-				domainNameHeader.style.fontSize = `${fontSize}rem`;
-			}
-		}
-
-		// Initial adjustment and set up an interval to continuously monitor
-		adjustFontSize();
-		setInterval(adjustFontSize, 100); // Adjust the interval duration as needed
-
 	</script>
 </body>
 
