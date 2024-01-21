@@ -58,7 +58,7 @@
         <span class="text-xl mr-2">Estimated Value</span>
 		<span class="text-green-500 text-xl font-bold">$7,500</span>
       </div>
-      <p class="mb-6 text-md">Secure NAME.ZIP to give your business the online identity it deserves. Simple, memorable, and ready for you to make it your own.</p>
+      <p class="mb-6 text-md">Secure <span id="domain-name" class="uppercase font-bold italic"></span> to give your business the online identity it deserves. Simple, memorable, and ready for you to make it your own.</p>
       <div class="flex items-center justify-between space-x-4 mb-6">
         <div class="text-center">
           <span class="text-2xl font-bold text-pink-500">3245</span>
@@ -190,5 +190,18 @@ Vue.createApp({
     document.getElementById('schemaMarkup').textContent = JSON.stringify(schema);
   });
 </script>
+
+		
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', (event) => {
+			    var domainName = window.location.hostname;
+				
+				if (domainName.startsWith('www.')) {
+					domainName = domainName.substring(4);
+				}
+			    document.getElementById('domain-name').textContent = domainName;
+			    document.getElementById('domain-name-input').value = domainName;
+			});
+		</script>
 </body>
 </html>
